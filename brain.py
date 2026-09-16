@@ -13,7 +13,6 @@ def process_command(command, speak):
     # Save Jarvis's response
     add_message("assistant", response)
 
-    # Speak the response
     speak(response)
 
     return should_exit

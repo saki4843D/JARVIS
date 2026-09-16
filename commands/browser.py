@@ -1,4 +1,5 @@
 import webbrowser
+from urllib.parse import quote_plus
 
 
 def open_chrome():
@@ -12,5 +13,7 @@ def open_youtube():
 
 
 def search_google(query):
-    webbrowser.open(f"https://www.google.com/search?q={query}")
+    if not query:
+        return "Tell me what you would like to search for."
+    webbrowser.open(f"https://www.google.com/search?q={quote_plus(query)}")
     return f"Searching Google for {query}"
